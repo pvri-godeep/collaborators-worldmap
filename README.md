@@ -1,3 +1,6 @@
+NOCH NICHT FERTIG
+
+
 Innerhalb des Input-Ordners kann eine Liste mit allen Städten des Projekts
 gepflegt werden. 
 Milhilfe der Scribte in scribts ensteht eine Liste mit den Koordinaten der 
