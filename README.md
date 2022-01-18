@@ -1,48 +1,55 @@
-NOCH NICHT FERTIG
+# Worldmap ReadMe
+
+## Allgemeiner Aufbau
+Das Repository beinhaltet drei zwei Ordner für die Inputs (input) und die Skripte (scripts). Der Input-Ordner beinhaltet alle Städte des Projekts und mithilfe der Skripte im Skript-Ordner entsteht eine Liste mit den Koordinaten der jeweiligen Standorte und eine schöne Karte.  
+### Wichtig
+Der User muss ein Ordner mit dem Namen *target* erstellen. Hier werden alle Erzeugnisse, wie die Weltkarte, abgelegt.
+
+  
+## Input
+Der Ordner beinhaltet eine csv-Datei, die alle Standorte des Projekts enthält.  
+### Wichtig 
+Wenn ein neuer Standort hinzukommt, bitte folgendes Format in die neue Zelle 
+übertragen: Land, Stadt
 
 
-Innerhalb des Input-Ordners kann eine Liste mit allen Städten des Projekts
-gepflegt werden. 
-Milhilfe der Scribte in scribts ensteht eine Liste mit den Koordinaten der 
-Standorte und eine schöne Karte.
+## Erstellung der Karte
+### Vorbereitung
+Einige Python-Erweiterungen müssen installiert werden.
 
-Input
-Die csv-Datei beinhaltet alle Standorte des Projekts.
-Wenn ein neuer Standort hinzukommt, bitte folgendes Vormat in die neue Zelle 
-übertragen:
-Land, Stadt
+#### geopy
+Installation 
+```
+pip3 install geopy
+```
+Nachlesen: https://www.thepythoncode.com/article/get-geolocation-in-python
 
+#### Pillow
+Installation
+```
+pip3 install Pillow
+```
 
-Erstellung der Karte
-Vorbereitung
-Einige Pythonerweiterungen müssen installiert werden.
-geopy
-Installation -> pip3 install geopy
-Nachlesen https://www.thepythoncode.com/article/get-geolocation-in-python
-Pillow
-Installation -> pip3 install Pillow
+### Ausführung
+Lediglich das Shell-Skript ausführen: process.sh  
+Dieses Skript führt nacheinander folgende Skripte aus:
 
-Ausführung
-Lediglich das Shell-Script ausführen: process.sh
-
-Ausführung im Detail
-Folgende Skripte werden nacheinander ausgeführt:
-
-geocoding.py (Python)
+#### geocoding.py (Python)
 Hiermit werden Koordinaten für die Standorte aus Input erstellt und in einer
 neuen CSV-Datei in target ausgegeben.
 
-worldMap.R (R)
+#### worldMap.R (R)
 Hiermit wird, mithilfe der Koordinaten, eine Weltkarte, inklusive markierter Strandorte, erstellt.
 
-legend.R (R)
+#### legend.R (R)
 Hiermit wird eine Legende für die Weltkarte erstellt.
 
-imgCrop.py (Python)
-Hiermit werden die beiden erstellten Bilder passent zugeschnitten.
+#### imgCrop.py (Python)
+Hiermit werden die beiden erstellten Bilder passend zugeschnitten.
 
-imgPaste.py (Python)
+#### imgPaste.py (Python)
 Hiermit werden die beiden zugeschnittenen Bilder zusammengefügt.
 
-imgDel.py (Python)
+#### imgDel.py (Python)
 Hiermit wird das Bild mit der Legende gelöscht, weil dieses Bild nicht mehr notwendig ist.
+
