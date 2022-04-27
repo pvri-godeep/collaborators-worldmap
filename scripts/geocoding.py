@@ -9,7 +9,7 @@ app = Nominatim(user_agent="tutorial") # instantiate a new Nominatim client
 
 
 dirname = os.path.dirname(__file__)
-input   = os.path.join(dirname, '../input/cities.csv')
+input   = os.path.join(dirname, '../../reporting/collections-metadata.csv')
 output  = os.path.join(dirname, '../target/coords.csv')
 
 
@@ -32,11 +32,12 @@ with open(input) as csv_file:
     line_count = 0
     for row in csv_reader:
         if line_count != 0:
-            print(row[0])
-            location = get_location_by_address(row[0])
+            area = row[3] + ', ' + row[1]
+            print(area)
+            location = get_location_by_address(area)
             latitude = location["lat"]
             longitude = location["lon"]
-            csvdata.append([row[0],latitude,longitude])
+            csvdata.append([area,latitude,longitude])
         else:
             line_count += 1
     
