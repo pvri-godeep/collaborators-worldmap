@@ -16,7 +16,7 @@ map('world',
 
 legend("topleft", 
        c("PH centers connected to GoDeep","Ethical approval pending"), 
-       fill = c("red","indianred1"), 
+       fill = c("red","pink"), 
        bty = "n")
 
 
