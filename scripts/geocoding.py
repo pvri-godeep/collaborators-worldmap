@@ -13,7 +13,7 @@ input   = os.path.join(dirname, '../../reporting/collections-metadata.csv')
 output  = os.path.join(dirname, '../target/coords.csv')
 
 
-header = ['City', 'Latitude', 'Longitude']
+header = ['City', 'Latitude', 'Longitude','etl_status']
 csvdata = []
 
 
@@ -37,7 +37,7 @@ with open(input) as csv_file:
             location = get_location_by_address(area)
             latitude = location["lat"]
             longitude = location["lon"]
-            csvdata.append([area,latitude,longitude])
+            csvdata.append([area,latitude,longitude,row[6]])
         else:
             line_count += 1
     
