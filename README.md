@@ -1,16 +1,13 @@
 # Worldmap ReadMe
 
 ## Allgemeiner Aufbau
-Das Repository beinhaltet drei zwei Ordner für die Inputs (input) und die Skripte (scripts). Der Input-Ordner beinhaltet alle Städte des Projekts und mithilfe der Skripte im Skript-Ordner entsteht eine Liste mit den Koordinaten der jeweiligen Standorte und eine schöne Karte.  
+Das Repository beinhaltet nur den Ordner für die Skripte (scripts). Die Inputs erfolgen über *collections-metadata.csv* aus dem reporting-Repository. Die Datei beinhaltet alle Städte des Projekts und mithilfe der Skripte im Skript-Ordner entsteht eine Liste mit den Koordinaten der jeweiligen Standorte und eine schöne Karte. Das entsprechende Repository muss demnach im gleichen Ordner geklont werden, wie dieses Repository.   
+
 ### Wichtig
 Der User muss ein Ordner mit dem Namen *target* erstellen. Hier werden alle Erzeugnisse, wie die Weltkarte, abgelegt.
 
   
-## Input
-Der Ordner beinhaltet eine csv-Datei, die alle Standorte des Projekts enthält.  
-### Wichtig 
-Wenn ein neuer Standort hinzukommt, bitte folgendes Format in die neue Zelle 
-übertragen: Land, Stadt
+
 
 
 ## Erstellung der Karte
