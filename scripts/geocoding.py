@@ -33,7 +33,7 @@ with open(input) as csv_file:
     for row in csv_reader:
         if line_count != 0:
             area = row[3] + ', ' + row[1]
-            print(area)
+            print(area, flush=True)
             location = get_location_by_address(area)
             latitude = location["lat"]
             longitude = location["lon"]
