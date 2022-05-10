@@ -19,15 +19,16 @@ map('world',
 points(coordTable$Longitude[coordTable$etl_status == 'connected'],
        coordTable$Latitude[coordTable$etl_status == 'connected'], 
        pch=20, 
-       cex=2, 
+       cex=1, 
        col="red")
 
 # etl_status - pending
 points(coordTable$Longitude[coordTable$etl_status == 'pending'],
        coordTable$Latitude[coordTable$etl_status == 'pending'], 
        pch=20, 
-       cex=2, 
-       col="pink")
+       cex=1, 
+       col="pink3")
+
 
 
 # legend("bottomleft", 
