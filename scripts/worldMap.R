@@ -5,8 +5,11 @@ coordTable  <- read.table("../target/coords.csv",
                           header = TRUE, 
                           sep=";")
 
-png(filename = "../target/wolrdMap.png", 
-    width = 600)
+png(filename = "../target/wolrdMap.png", width = 600)
+
+# for SVG change remove PNG above and uncomment the following line
+#svg(filename="../target/worldMap.svg", width=9, height=6)
+
 
 map('world',
     col="lightskyblue", 
