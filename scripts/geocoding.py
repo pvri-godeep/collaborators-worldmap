@@ -9,7 +9,7 @@ app = Nominatim(user_agent="tutorial") # instantiate a new Nominatim client
 
 
 dirname = os.path.dirname(__file__)
-input   = os.path.join(dirname, '../../reporting/collections-metadata.csv')
+input   = os.path.join(dirname, '../../reporting/collections-metadata.tsv')
 output  = os.path.join(dirname, '../target/coords.csv')
 
 
@@ -28,10 +28,11 @@ def get_location_by_address(address):
 
 # Hiermit werden die Koordianten mit hilfe des IMputs erstellt und für die Ausgabe vorbereitet
 with open(input) as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=';')
+    csv_reader = csv.reader(csv_file, delimiter='\t')
     line_count = 0
     for row in csv_reader:
         if line_count != 0:
+            print(row)
             area = row[3] + ', ' + row[1]
             print(area, flush=True)
             location = get_location_by_address(area)
