@@ -32,7 +32,6 @@ with open(input) as csv_file:
     line_count = 0
     for row in csv_reader:
         if line_count != 0:
-            print(row)
             area = row[3] + ', ' + row[1]
             print(area, flush=True)
             location = get_location_by_address(area)
