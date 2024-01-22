@@ -13,14 +13,17 @@ Der User muss ein Ordner mit dem Namen *target* erstellen. Hier werden alle Erze
 ## Erstellung der Karte
 ### Vorbereitung
 Sicherstellen, dass die Umgebungsvariablen R_HOME und INKSCAPE_HOME definiert sind. Inkscape wird in einer Version >= 1.2 benötigt.
-z.B.
+z.B. mit Windows 11
 ```
 R_HOME="/c/Program Files/R/R-4.1.2"
 export R_HOME
 
-INKSCAPE_HOME="/c/Program Files/Inkscape"
-export INKSCAPE_HOME
+INKSCAPE_BIN="/c/Program Files/Inkscape/bin/inkscape"
+export INKSCAPE_BIN
 ```
+bei MacOS müssen die Pfade entsprechend angepasst werden
+z.B. `INKSCAPE_BIN="/Applications/Inkscape.app/Contents/MacOS/inkscape"`
+
 
 Python-Erweiterung geopy muss installiert werden.
 
