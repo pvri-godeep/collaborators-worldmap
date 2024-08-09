@@ -6,7 +6,9 @@ Das Repository beinhaltet nur den Ordner für die Skripte (scripts). Die Inputs 
 ### Wichtig
 Der User muss ein Ordner mit dem Namen *target* erstellen. Hier werden alle Erzeugnisse, wie die Weltkarte, abgelegt.
 
-  
+
+## TODO Automatisierung
+https://brettops.io/blog/inkscape-container/
 
 
 
