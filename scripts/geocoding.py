@@ -16,11 +16,13 @@ header = ['City', 'Latitude', 'Longitude','etl_status']
 
 # Cache coordinates previously written to output
 coordcache = {}
-with open(output, newline='') as csvfile:
-    reader = csv.DictReader(csvfile, delimiter=';')
-    for row in reader:
-        coordcache[row[header[0]]] = (row[header[1]],row[header[2]])
-
+try:
+    with open(output, newline='') as csvfile:
+        reader = csv.DictReader(csvfile, delimiter=';')
+        for row in reader:
+            coordcache[row[header[0]]] = (row[header[1]],row[header[2]])
+except FileNotFoundError:
+    print("Coordinate cache not found. All coordinates will be loaded.")
 
 csvdata = []
 
@@ -31,7 +33,7 @@ def get_location_by_address(address):
         latlon = coordcache[address]
         return {'lat':latlon[0], 'lon':latlon[1]}
     
-    time.sleep(1) # Wichtig - nicht löschen
+    time.sleep(1) # needed because of rate limiting of the public address lookup API
     try:
         return app.geocode(address).raw
     except:
@@ -54,7 +56,7 @@ with open(input) as csv_file:
             line_count += 1
     
 
-# Hiermit wird die Ausgabe ausgeführt 
+# overwrite coordinate cache file
 with open(output, 'w', newline='') as f:
     writer = csv.writer(f, delimiter =';')
 
