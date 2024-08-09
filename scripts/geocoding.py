@@ -56,7 +56,7 @@ with open(input) as csv_file:
             line_count += 1
     
 
-# overwrite coordinate cache file
+# overwrite coordinate cache/output file. this will be used for generating the map via R.
 with open(output, 'w', newline='') as f:
     writer = csv.writer(f, delimiter =';')
 
