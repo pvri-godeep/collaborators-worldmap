@@ -5,7 +5,6 @@ coordTable  <- read.table("../target/coords.csv",
                           header = TRUE, 
                           sep=";")
 
-# for SVG change remove PNG above and uncomment the following line
 svg(filename="../target/worldmap-latest.svg", width=9, height=6)
 
 
@@ -39,13 +38,7 @@ points(coordTable$Longitude[coordTable$etl_status == 'connected'],
        cex=1.5, 
        col="red")
 
-
-
-# legend("bottomleft", 
-#        c("PH centers connected to GoDeep","Ethical approval pending"), 
-#        fill = c("red","indianred1"), 
-#        bty = "n")
-
+# close output image file
 dev.off()
 
 
