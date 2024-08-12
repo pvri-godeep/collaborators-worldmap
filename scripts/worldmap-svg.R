@@ -1,11 +1,11 @@
 library(mapproj)
 library(mapdata)
 
-coordTable  <- read.table("../target/coords.csv", 
+coordTable  <- read.table("target/coords.csv", 
                           header = TRUE, 
                           sep=";")
 
-svg(filename="../target/worldmap-latest.svg", width=9, height=6)
+svg(filename="target/worldmap-latest.svg", width=9, height=6)
 
 
 map('world',
@@ -43,7 +43,7 @@ dev.off()
 
 
 # generate map for web site
-svg(filename="../target/worldmap-web-latest.svg", width=9, height=6)
+svg(filename="target/worldmap-web-latest.svg", width=9, height=6)
 
 map('world',
     col="#b6e0fc", # lightskyblue

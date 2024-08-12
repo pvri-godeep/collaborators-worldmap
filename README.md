@@ -47,3 +47,9 @@ neuen CSV-Datei in target ausgegeben.
 Hiermit wird, mithilfe der Koordinaten, eine Weltkarte, inklusive markierter Strandorte, erstellt.
 
 Das shellscript führt anschließend Inkscape aus, um den relevanten Bereich vergrößert zu exportieren.
+
+#### for docker 
+#### build image
+docker build -t automate_image -f collaborators-worldmap/docker/Dockerfile .
+#### run the docker image and save the data into target folder
+docker run --rm -v $(pwd)/collaborators-worldmap/target:/var/build/target automate_image

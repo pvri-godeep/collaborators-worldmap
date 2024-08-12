@@ -9,8 +9,8 @@ app = Nominatim(user_agent="tutorial") # instantiate a new Nominatim client
 
 
 dirname = os.path.dirname(__file__)
-input   = os.path.join(dirname, '../../reporting/collections-metadata.tsv')
-output  = os.path.join(dirname, '../target/coords.csv')
+input   = os.path.join(dirname, 'reporting/collections-metadata.tsv')
+output  = os.path.join(dirname, 'target/coords.csv')
 
 header = ['City', 'Latitude', 'Longitude','etl_status']
 
