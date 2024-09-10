@@ -9,8 +9,8 @@ app = Nominatim(user_agent="tutorial") # instantiate a new Nominatim client
 
 
 dirname = os.path.dirname(__file__)
-input   = os.path.join(dirname, '../../reporting/collections-metadata.tsv')
-output  = os.path.join(dirname, '../target/coords.csv')
+input   = os.path.join(dirname, 'reporting/collections-metadata.tsv')
+output  = os.path.join(dirname, 'target/coords.csv')
 
 header = ['City', 'Latitude', 'Longitude','etl_status']
 
@@ -55,7 +55,6 @@ with open(input) as csv_file:
         else:
             line_count += 1
     
-
 # overwrite coordinate cache/output file. this will be used for generating the map via R.
 with open(output, 'w', newline='') as f:
     writer = csv.writer(f, delimiter =';')
