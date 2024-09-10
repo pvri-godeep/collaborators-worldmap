@@ -33,18 +33,12 @@ RUN add-apt-repository ppa:inkscape.dev/stable -y && \
 RUN R -e "install.packages(c('maps', 'mapproj', 'mapdata'), repos='https://cloud.r-project.org/')"
 
 # set working directory
-WORKDIR /var/build
+RUN mkdir -p /var/build
 
 # copy necessary files into the Docker image
 COPY collaborators-worldmap/scripts/worldmap-svg.R /var/build/worldmap-svg.R
 COPY collaborators-worldmap/scripts/geocoding.py /var/build/geocoding.py
 COPY collaborators-worldmap/scripts/process.sh /var/build/process.sh
-COPY collaborators-worldmap/target /var/build/target
-COPY reporting /var/build/reporting
-
-# make sure the script is executable
-RUN chmod +x /var/build/process.sh
-RUN chmod +x /var/build/target
 
 # set the entrypoint to run the script
 ENTRYPOINT ["/var/build/process.sh"]

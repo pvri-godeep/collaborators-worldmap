@@ -49,7 +49,15 @@ Hiermit wird, mithilfe der Koordinaten, eine Weltkarte, inklusive markierter Str
 Das shellscript führt anschließend Inkscape aus, um den relevanten Bereich vergrößert zu exportieren.
 
 #### for docker 
-#### build image
-docker build -t automate_image -f collaborators-worldmap/docker/Dockerfile .
-#### run the docker image and save the data into target folder
-docker run --rm -v $(pwd)/collaborators-worldmap/target:/var/build/target automate_image
+#### Ensure Docker is installed and running on your machine
+#### The command should be run in a terminal.
+#### The below first command will Remove Existing Docker Image and Build New Docker Image
+#### It is typically executed in the root directory of your project or in a directory where the collaborators-worldmap folder is accessible.
+docker image rm -f godeep_collaborators_worldmap || true && \
+docker build -t godeep_collaborators_worldmap -f collaborators-worldmap/docker/Dockerfile .
+
+#### The Docker image godeep_collaborators_worldmap must be built before running this command.
+docker run --rm \
+  -v $(pwd)/reporting/collections-metadata.tsv:/var/build/reporting/collections-metadata.tsv \
+  -v $(pwd)/collaborators-worldmap/target:/var/build/target/ \
+  godeep_collaborators_worldmap

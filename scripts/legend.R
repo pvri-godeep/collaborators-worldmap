@@ -1,12 +1,12 @@
 library(mapproj)
 library(mapdata)
 
-coordTable  <- read.table("target/coords.csv", 
+coordTable  <- read.table("var/build/target/coords.csv", 
                           header = TRUE, 
                           sep=";")
 
 
-png(filename = "target/legend.png",
+png(filename = "var/build/target/legend.png",
     width = 600)
 
 
