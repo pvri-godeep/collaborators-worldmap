@@ -1,6 +1,5 @@
 from geopy.geocoders import Nominatim
 import time
-from pprint import pprint
 import csv
 import os
 
