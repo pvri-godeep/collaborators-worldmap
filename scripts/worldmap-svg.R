@@ -1,9 +1,19 @@
 library(mapproj)
 library(mapdata)
 
-coordTable  <- read.table("../target/coords.csv", 
-                          header = TRUE, 
-                          sep=";")
+#coordTable  <- read.table("../target/coords.csv", 
+#                          header = TRUE, 
+#                          sep=";")
+
+coordTable <- read.table(
+  "../target/coords.csv",
+  sep = ";",
+  header = TRUE,
+  quote = "",
+  comment.char = "",
+  stringsAsFactors = FALSE
+)
+
 
 svg(filename="../target/worldmap-latest.svg", width=9, height=6)
 
