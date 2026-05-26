@@ -50,7 +50,7 @@ with open(input) as csv_file:
             location = get_location_by_address(area)
             latitude = location["lat"]
             longitude = location["lon"]
-            csvdata.append([area,latitude,longitude,row[6]])
+            csvdata.append([area,latitude,longitude,row[7]])
         else:
             line_count += 1
     
